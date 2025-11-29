@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Laporan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #0d0d0d, #8b0000, #064d25);
+      font-family: "Poppins", sans-serif;
+      min-height: 100vh;
+      transition: .4s;
+      color: #fff;
+    }
+
+    body.light-mode {
+      background: linear-gradient(135deg, #ffffff, #e8f5e9, #ffcdd2);
+      color: #222;
+    }
+
+    /* Header */
+    .header {
+      padding: 70px 0 40px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      text-shadow: 0 3px 12px rgba(255,255,255,0.3);
+      transition: color .4s;
+    }
+
+    body.light-mode .header h1 {
+      color: #111;
+      text-shadow: none;
+    }
+
+    /* Mode Button */
+    .mode-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: .3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .mode-btn:hover {
+      scale: 1.07;
+      background: rgba(255,255,255,0.35);
+    }
+
+    body.light-mode .mode-btn {
+      background: rgba(183, 22, 4, 0.269);
+    }
+
+    /* Cards */
+    .card-link {
+      border-radius: 25px;
+      padding: 35px 25px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      transition: .4s;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .card-link:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    body.light-mode .card-link {
+      background: rgba(255,255,255,0.8);
+      border: none;
+      color: #222;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .card-link h4 {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .kelas-btn {
+      border-radius: 12px;
+      font-weight: 600;
+      padding: 8px 18px;
+    }
+
+    body.light-mode .kelas-btn  {
+      border-radius: 12px;
+      font-weight: 600;
+      padding: 8px 18px;
+      background-color: #ea2a2ab7;
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+      .header h1 { font-size: 1.9rem; }
+      .card-link { padding: 28px 18px; }
+    }
+  </style>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+
+      const icon = document.getElementById("modeIcon");
+      icon.classList.toggle("bi-moon-fill");
+      icon.classList.toggle("bi-brightness-high-fill");
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- TOMBOL MODE -->
+  <button class="mode-btn" onclick="toggleMode()">
+    <i id="modeIcon" class="bi bi-moon-fill fs-4"></i>
+  </button>
+
+  <!-- HEADER -->
+  <div class="container">
+    <div class="header">
+      <img src="Poster_-_poster_-removebg-preview.png" alt="Logo Yayasan" 
+        style="width:480px; margin-bottom:20px; filter: drop-shadow(0 4px 10px rgba(255,255,255,0.5));" />
+      <h1 class="fw-bold portal-title">Portal Laporan</h1>
+      <p class="opacity-75">Akses cepat ke seluruh laporan kegiatan</p>
+    </div>
+
+    <!-- CARDS -->
+    <div class="row g-4">
+
+      <!-- WEEKLY REPORT -->
+      <div class="col-md-4">
+        <div class="card card-link text-center">
+          <i class="bi bi-journal-check fs-1 text-warning"></i>
+          <h4>Weekly Report</h4>
+
+          <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+            <a href="#" class="btn btn-outline-light kelas-btn">7</a>
+            <a href="#" class="btn btn-outline-light kelas-btn">8</a>
+            <a href="#" class="btn btn-outline-light kelas-btn">9A</a>
+            <a href="#" class="btn btn-outline-light kelas-btn">9B</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SHOLAT -->
+      <div class="col-md-4">
+        <div class="card card-link text-center">
+          <i class="bi bi-moon-stars fs-1 text-info"></i>
+          <h4>Laporan Sholat</h4>
+
+          <div class="d-flex justify-content-center gap-2 flex-wrap mt-3">
+            <a href="#" class="btn btn-outline-light kelas-btn">7</a>
+            <a href="#" class="btn btn-outline-light kelas-btn">8</a>
+            <a href="#" class="btn btn-outline-light kelas-btn">9A</a>
+            <a href="#" class="btn btn-outline-light kelas-btn">9B</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAHFIDZ -->
+      <div class="col-md-4">
+        <a href="#" class="text-decoration-none">
+          <div class="card card-link text-center">
+            <i class="bi bi-book-half fs-1 text-success"></i>
+            <h4>Laporan Tahfidz</h4>
+            <p class="opacity-75 mt-1">Setoran & Evaluasi</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- MENTORING MALAM -->
+      <div class="col-md-4">
+        <a href="#" class="text-decoration-none">
+          <div class="card card-link text-center">
+            <i class="bi bi-people-fill fs-1 text-primary"></i>
+            <h4>Mentoring Malam</h4>
+            <p class="opacity-75 mt-1">Monitoring kegiatan malam</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
